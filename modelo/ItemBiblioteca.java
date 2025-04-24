@@ -3,8 +3,8 @@ package modelo;
 public abstract class ItemBiblioteca {
     protected String titulo;
 
-    public ItemBiblioteca(String titulo) {
-        this.titulo = titulo;
+    public ItemBiblioteca() {
+    
     }
 
     public String getTitulo() {

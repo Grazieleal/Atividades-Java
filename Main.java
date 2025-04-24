@@ -4,18 +4,20 @@ import modelo.Usuario;
 
 public class Main {
     public static void main(String[] args) {
-        Usuario usuario = new Usuario("Maria");
-        Livro livro1 = new Livro("Java para Coitados", "Graziele Silva");
+        Usuario usuario = new Usuario(1, "Mariazinha");
+        Livro livro = new Livro(101, "Java para coitados", "Graziele A.");
+
+        usuario.mostrarDados();
+        livro.mostrarDetalhes();
 
         try {
-            System.out.println("Usuário: " + usuario.getNome());
-            livro1.mostrarDetalhes();
-            livro1.emprestar();
-            livro1.emprestar(); 
+            livro.emprestar();
+            livro.emprestar(); // Vai lançar exceção
         } catch (EmprestimoException e) {
             System.out.println("Erro: " + e.getMessage());
-        } finally {
-            livro1.devolver();
         }
+
+        livro.devolver();
+        livro.mostrarDetalhes();
     }
 }

@@ -3,18 +3,38 @@ package modelo;
 import estoque.EmprestimoException;
 
 public class Livro extends ItemBiblioteca implements Emprestavel {
+    private int id;
+    private String titulo;
     private String autor;
     private boolean emprestado;
 
-    public Livro(String titulo, String autor) {
-        super(titulo);
+    public Livro(int id, String titulo, String autor) {
+        this.id = id;
+        this.titulo = titulo;
         this.autor = autor;
         this.emprestado = false;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public boolean isEmprestado() {
+        return emprestado;
+    }
+
     @Override
     public void mostrarDetalhes() {
-        System.out.println("Livro: " + titulo + " | Autor: " + autor);
+        System.out.println("ID: " + id + " | Livro: " + titulo + " | Autor: " + autor + 
+                           " | Emprestado: " + (emprestado ? "Sim" : "Não"));
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Main {
 
         try {
             livro.emprestar();
-            livro.emprestar(); // Vai lançar exceção
+            livro.emprestar();
         } catch (EmprestimoException e) {
             System.out.println("Erro: " + e.getMessage());
         }

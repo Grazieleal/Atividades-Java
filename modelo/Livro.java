@@ -1,6 +1,6 @@
 package modelo;
 
-import Exceção.EmprestimoException;
+import estoque.EmprestimoException;
 
 public class Livro extends ItemBiblioteca implements Emprestavel {
     private String autor;
@@ -12,10 +12,12 @@ public class Livro extends ItemBiblioteca implements Emprestavel {
         this.emprestado = false;
     }
 
+    @Override
     public void mostrarDetalhes() {
         System.out.println("Livro: " + titulo + " | Autor: " + autor);
     }
 
+    @Override
     public void emprestar() throws EmprestimoException {
         if (emprestado) {
             throw new EmprestimoException("Livro já emprestado: " + titulo);
@@ -24,6 +26,7 @@ public class Livro extends ItemBiblioteca implements Emprestavel {
         System.out.println("Livro emprestado com sucesso: " + titulo);
     }
 
+    @Override
     public void devolver() {
         emprestado = false;
         System.out.println("Livro devolvido: " + titulo);
